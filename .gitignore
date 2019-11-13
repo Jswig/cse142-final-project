@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# data:
+*.json
+data_train.json
+
+
+# saved models:
+*.

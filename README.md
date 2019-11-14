@@ -1,9 +1,8 @@
 # Predicting Star Ratings from User Reviews
 
-*Group : Anders Poirel and Oasys Okubo*
-<<<<<<< HEAD
+*Group : Anders Poirel, Oasys Okubo and Anish Parasrampuria*
 
-Final project for CSE 142: MAchine Learning and Data Mining, taught at UC Santa Cruz in Fall 2019.
+Final project for CSE 142: Machine Learning and Data Mining, taught at UC Santa Cruz in Fall 2019.
 
 This project has for goal to predict the star rating given a Yelp review.
 

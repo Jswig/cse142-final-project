@@ -10,7 +10,6 @@ from lstm import lstm_model
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-sns.set()
 
 def plot_loss(history):
     plt.plot(history.history['loss'])
@@ -22,35 +21,35 @@ def plot_loss(history):
     return
 
 def plot_acc(history):
-    plt.plot(history.history['acc'])
-    plt.plot(history.history['val_acc'])
+    plt.plot(history.history['accuracy'])
+    plt.plot(history.history['val_accuracy'])
     plt.title('Model accuracy')
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='lower right')
     return
 
-checkpoint_path = 'output/weights/1'
+CHECKPOINT_PATH = '../../output/checkpoint.ckpt''
+DATA_PATH = '../../data/processed/'
 
-X_train = np.load('../../data/processed/X_train.npy')
-y_train = np.load('../../data/processed/X_train.npy')
+X_train = np.load(DATA_PATH + 'X_train.npy')
+y_train = np.load(DATA_PATH + 'y_train.npy')
 
-cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath = checkpoint_path, save_weights_only = True, verbose = 1)
+es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_accuracy',
+                              min_delta = 0.001,
+                              patience = 3,
+                              verbose = 0, mode = 'auto')
+
 
 model = lstm_model()
-
 history = model.fit(X_train, y_train, validation_split = 0.2, epochs = 10, workers = -1, use_multiprocessing = True, callbacks = [cp_callback])
     
+
 # saves training curves
+sns.set()
+
 plot_acc(history)
 plt.savefig('../../output/acc1.png')
 
 plot_loss(history)
 plt.savefig('../../output/loss1.png')
-
-# saves two things:
-# - entire model so that it can be reloaded for testing. Use 
-# tf.keras.models.load_model to load it
-# - model weights for initializing weights in future models with same weights. Use model.load_weights to load it 
-model.save_weights('../../output/weights/1', save_format = 'tf')
-model.save('../../output/models/model1.h5')

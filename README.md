@@ -34,6 +34,3 @@ Download the data from [https://ucsc-courses.github.io/CSE142-Fall2019/hw/Sample
     * `predicting_ratings/features`: code for data pre-processing
     * `predicting_ratings/models`: code for building models and generating predictions
 * `reports`: final project reports
-
-## Generating Predictions
-

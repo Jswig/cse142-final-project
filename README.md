@@ -25,7 +25,7 @@ Download the data from [https://ucsc-courses.github.io/CSE142-Fall2019/hw/Sample
 
 ## Project Structure
 
-Note: some of these folder are not stored on GitHub due to space constraints (data, serialized models, report pdf)
+Note: some of these folders are not stored on GitHub due to space constraints (data, serialized models, report pdf)
 
 * `data`
     * `data/raw`: raw json files

@@ -1,6 +1,6 @@
 # Predicting Star Ratings from User Reviews
 
-*Group : Anders Poirel, Oasys Okubo and Anish Parasrampuria*
+*Group : Anders Poirel, Oasys Okubo*
 
 Final project for CSE 142: Machine Learning and Data Mining, taught at UC Santa Cruz in Fall 2019.
 
